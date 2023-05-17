@@ -63,8 +63,10 @@ def delete_command(url):
 
 def run():
     # use guild_urls to test, since global changes take effect after a delay
-    for command in get_all_commands(guild_url):
-        delete_command(f"{guild_url}/{command['id']}")
+    # optional: delete all existing commands to reset to clean state
+    # for guild_url in guild_urls:
+    #    for command in get_all_commands(guild_url):
+    #        delete_command(f"{guild_url}/{command['id']}")
             
     # publish new commands
     commands = get_json(BUCKET, KEY)
